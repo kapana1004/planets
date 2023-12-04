@@ -16,7 +16,7 @@ export default function Header({ activMenu, setActivMenu, openCloseMenu }) {
         width="24"
         height="17"
       >
-        <g fill={activMenu ? "gray" : "white"} fill-rule="evenodd">
+        <g fill={activMenu ? "gray" : "white"} fillRule="evenodd">
           <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
         </g>
       </svg>
