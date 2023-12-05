@@ -1,23 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Mobilmenu({ activeMenu, setActivMenu, openCloseMenu }) {
-  // const { nameId } = useParams();
-
-  // const planet = planetsData.find(
-  //   (planet) => planet.name.toLowerCase() === nameId
-  // );
-  // console.log(nameId);
-  // const navigate = useNavigate();
-
-  // const handleNavigate = () => {
-  //   navigate("mercury", {
-  //     state: {
-  //       name: planetsData[0].name,
-  //       image: planetsData[0].images.planet,
-  //     },
-  //   });
-  // };
+export default function Mobilmenu({ openCloseMenu }) {
   return (
     <div className=" flex flex-col">
       <Link to="/mercury">
