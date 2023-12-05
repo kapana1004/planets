@@ -1,6 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import shapeIcon from "../../public/assets/Shape.svg";
+import { useState, useEffect, useRef } from "react";
+import shapeIcon from "/assets/Shape.svg";
 import Planetdatafooter from "../components/Planetdatafooter";
 
 export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
@@ -20,12 +20,16 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   const [revolution, setRevolution] = useState(planet.revolution);
   const [radius, setRadius] = useState(planet.radius);
   const [temperature, setTemerature] = useState(planet.temperature);
-  const [borderColor, setBorderColor] = useState("");
+  const [overviewColorActive, setOverviewColorActive] = useState(false);
+  const [structureColorActive, setStructureColorActive] = useState(false);
+  const [surfaceColorAcrive, setSurfaceColorActive] = useState(false);
+  let borderColor = useRef("");
 
   useEffect(() => {
     const newPlanet = planetsData.find(
       (planet) => planet.name.toLowerCase() === nameId
     );
+    borderColor.current = planet.color;
 
     setCurrentText(newPlanet.overview.content);
     setCurrentSource(newPlanet.overview.source);
@@ -40,27 +44,40 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
     setCurrentText(planet.structure.content);
     setPlanetImage(planet.images.internal);
     setSurfaceImageActive(false);
+    setSurfaceImageActive(false);
+    setStructureColorActive(true);
+    setSurfaceColorActive(false);
+    setOverviewColorActive(false);
   };
   const handleSurfaceText = () => {
     setCurrentText(planet.geology.content);
     setPlanetImage(planet.images.planet);
     setSurfaceImage(planet.images.geology);
     setSurfaceImageActive(true);
+    setStructureColorActive(false);
+    setOverviewColorActive(false);
+    setSurfaceColorActive(true);
   };
 
   const handleOverviewText = () => {
     setCurrentText(planet.overview.content);
     setPlanetImage(planet.images.planet);
     setSurfaceImageActive(false);
+    setOverviewColorActive(true);
+    setSurfaceColorActive(false);
+    setStructureColorActive(false);
   };
-
-  console.log(borderColor);
 
   return (
     <div className=" flex flex-col justify-center items-center">
-      <div className=" w-[100%] pt-[15px]  flex flex-row justify-around border-b-[1px]">
+      <div className=" w-[100%] pt-[15px]  flex flex-row justify-around border-b-[0.4px]">
         <div
-          className={` border-b-[3px] ${borderColor} w-[100%] pl-[35px] pb-[20px]`}
+          className={` w-[100%] pl-[35px] pb-[20px]`}
+          style={
+            overviewColorActive
+              ? { borderBottom: `3px solid ${borderColor.current}` }
+              : null
+          }
         >
           <span
             onClick={handleOverviewText}
@@ -70,7 +87,14 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
           </span>
         </div>
 
-        <div className=" w-[100%] pl-[35px]">
+        <div
+          className=" w-[100%] pl-[35px]"
+          style={
+            structureColorActive
+              ? { borderBottom: `3px solid ${borderColor.current}` }
+              : null
+          }
+        >
           <span
             onClick={handleStructureText}
             className=" text-[9px] hover:font-bold cursor-pointer "
@@ -78,7 +102,14 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
             STRUCTURE
           </span>
         </div>
-        <div className=" w-[100%] pl-[35px]">
+        <div
+          className=" w-[100%] pl-[35px]"
+          style={
+            surfaceColorAcrive
+              ? { borderBottom: `3px solid ${borderColor.current}` }
+              : null
+          }
+        >
           <span
             onClick={handleSurfaceText}
             className=" text-[9px] hover:font-bold  cursor-pointer"

@@ -126,7 +126,7 @@
   },
   {
     "name": "Saturn",
-    "color": "#1ec2a4",
+    "color": "#CD5120",
     "overview": {
       "content": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine and a half times that of Earth. It only has one-eighth the average density of Earth.",
       "source": "https://en.wikipedia.org/wiki/Saturn"
@@ -151,7 +151,7 @@
   },
   {
     "name": "Uranus",
-    "color": "#2d68f0",
+    "color": "#1EC1A2",
     "overview": {
       "content": "Uranus is the seventh planet from the Sun. Its name is a reference to the Greek god of the sky, Uranus according to Greek mythology, was the great-grandfather of Ares. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
       "source": "https://en.wikipedia.org/wiki/Uranus"
@@ -176,7 +176,7 @@
   },
   {
     "name": "Neptune",
-    "color": "#1ec2a4",
+    "color": "#2D68F0",
     "overview": {
       "content": "Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, more massive than its near-twin Uranus.",
       "source": "https://en.wikipedia.org/wiki/Neptune"
