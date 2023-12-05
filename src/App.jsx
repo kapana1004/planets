@@ -42,6 +42,8 @@ function App() {
               }
             />
           ) : null}
+
+          <Route path="/" element={!activMenu ? <Mobilmenu /> : null} />
         </Routes>
       </div>
     </div>

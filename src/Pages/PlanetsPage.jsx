@@ -19,7 +19,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   const [rotation, setRotation] = useState(planet.rotation);
   const [revolution, setRevolution] = useState(planet.revolution);
   const [radius, setRadius] = useState(planet.radius);
-  const [temperature, setTemerature] = useState(planet.temperature);
+  const [temperature, setTemperature] = useState(planet.temperature);
   const [overviewColorActive, setOverviewColorActive] = useState(false);
   const [structureColorActive, setStructureColorActive] = useState(false);
   const [surfaceColorAcrive, setSurfaceColorActive] = useState(false);
@@ -37,7 +37,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
     setRotation(planet.rotation);
     setRevolution(planet.revolution);
     setRadius(planet.radius);
-    setTemerature(planet.temperature);
+    setTemperature(planet.temperature);
   }, [location.pathname]);
 
   const handleStructureText = () => {
