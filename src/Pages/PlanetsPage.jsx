@@ -20,7 +20,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   const [revolution, setRevolution] = useState(planet.revolution);
   const [radius, setRadius] = useState(planet.radius);
   const [temperature, setTemperature] = useState(planet.temperature);
-  const [overviewColorActive, setOverviewColorActive] = useState(false);
+  const [overviewColorActive, setOverviewColorActive] = useState(true);
   const [structureColorActive, setStructureColorActive] = useState(false);
   const [surfaceColorAcrive, setSurfaceColorActive] = useState(false);
   let borderColor = useRef("");
