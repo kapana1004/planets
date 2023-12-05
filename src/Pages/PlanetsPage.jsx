@@ -20,6 +20,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   const [revolution, setRevolution] = useState(planet.revolution);
   const [radius, setRadius] = useState(planet.radius);
   const [temperature, setTemerature] = useState(planet.temperature);
+  const [borderColor, setBorderColor] = useState("");
 
   useEffect(() => {
     const newPlanet = planetsData.find(
@@ -53,27 +54,38 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
     setSurfaceImageActive(false);
   };
 
+  console.log(borderColor);
+
   return (
     <div className=" flex flex-col justify-center items-center">
-      <div className=" w-[100%] pt-[15px] pb-[15px] flex flex-row justify-around border-b border-[rgba(255, 255, 255, 1)]">
-        <span
-          onClick={handleOverviewText}
-          className=" text-[9px] hover:font-bold cursor-pointer "
+      <div className=" w-[100%] pt-[15px]  flex flex-row justify-around border-b-[1px]">
+        <div
+          className={` border-b-[3px] ${borderColor} w-[100%] pl-[35px] pb-[20px]`}
         >
-          OVERVIEW
-        </span>
-        <span
-          onClick={handleStructureText}
-          className=" text-[9px] hover:font-bold cursor-pointer "
-        >
-          STRUCTURE
-        </span>
-        <span
-          onClick={handleSurfaceText}
-          className=" text-[9px] text-[#FFFF] hover:font-bold  cursor-pointer"
-        >
-          SURFACE{" "}
-        </span>
+          <span
+            onClick={handleOverviewText}
+            className=" text-[9px] hover:font-bold cursor-pointer "
+          >
+            OVERVIEW
+          </span>
+        </div>
+
+        <div className=" w-[100%] pl-[35px]">
+          <span
+            onClick={handleStructureText}
+            className=" text-[9px] hover:font-bold cursor-pointer "
+          >
+            STRUCTURE
+          </span>
+        </div>
+        <div className=" w-[100%] pl-[35px]">
+          <span
+            onClick={handleSurfaceText}
+            className=" text-[9px] hover:font-bold  cursor-pointer"
+          >
+            SURFACE{" "}
+          </span>
+        </div>
       </div>
 
       <div className=" flex relative">
