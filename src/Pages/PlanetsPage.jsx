@@ -1,6 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import shapeIcon from "/assets/Shape.svg";
+import shapeIcon from "/assets/icon-source.svg";
 import Planetdatafooter from "../components/Planetdatafooter";
 
 export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
@@ -128,7 +128,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
 
         {surfaceImageActive ? (
           <img
-            className=" w-[65px] h-[65px] absolute top-[60%] left-[22%]"
+            className="w-[65px] h-[65px] absolute top-[60%] left-[22%]"
             src={surfaceImage}
             alt="geology"
           />
@@ -138,12 +138,12 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
       <p className=" w-[327px] text-[11px] leading-[22px] pb-[30px]">
         {currentText}
       </p>
-      <div className=" flex flex-row mb-[28px]">
+      <div className=" flex flex-row mb-[28px] items-center">
         <span className=" pr-[5px] text-[#838391]">Source:</span>
         <a className=" text-[#838391] pr-[5px]" href={currentSource}>
           Wikkipedia
         </a>
-        <img src={shapeIcon} alt="shape" />
+        <img className=" w-[12px] h-[12px]" src={shapeIcon} alt="shape" />
       </div>
 
       {!activMenu ? (

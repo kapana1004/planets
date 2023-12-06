@@ -2,7 +2,7 @@ import { useState } from "react";
 import Mobilmenu from "./components/Mobilmenu";
 import Header from "./components/Header";
 // import Planetdatafooter from "./components/Planetdatafooter";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import PlanetsPage from "./Pages/PlanetsPage";
 import planetsData from "./data.json";
 
@@ -30,6 +30,7 @@ function App() {
         ) : null}
 
         <Routes>
+          <Route path="/" element={<Navigate to="/mercury" />} />
           {!activMenu ? (
             <Route
               path="/:nameId"
@@ -42,8 +43,6 @@ function App() {
               }
             />
           ) : null}
-
-          <Route path="/" element={!activMenu ? <Mobilmenu /> : null} />
         </Routes>
       </div>
     </div>
