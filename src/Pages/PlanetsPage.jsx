@@ -2,6 +2,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import shapeIcon from "/assets/icon-source.svg";
 import Planetdatafooter from "../components/Planetdatafooter";
+import Planetsstructure from "../components/Planetsstructure";
 
 export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   const location = useLocation();
@@ -70,54 +71,15 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
 
   return (
     <div className=" flex flex-col justify-center items-center">
-      <div className=" w-[100%] pt-[15px]  flex flex-row justify-around border-b-[0.4px]">
-        <div
-          className={` w-[100%] pl-[35px] pb-[20px]`}
-          style={
-            overviewColorActive
-              ? { borderBottom: `3px solid ${borderColor.current}` }
-              : null
-          }
-        >
-          <span
-            onClick={handleOverviewText}
-            className=" text-[9px] hover:font-bold cursor-pointer "
-          >
-            OVERVIEW
-          </span>
-        </div>
-
-        <div
-          className=" w-[100%] pl-[35px]"
-          style={
-            structureColorActive
-              ? { borderBottom: `3px solid ${borderColor.current}` }
-              : null
-          }
-        >
-          <span
-            onClick={handleStructureText}
-            className=" text-[9px] hover:font-bold cursor-pointer "
-          >
-            STRUCTURE
-          </span>
-        </div>
-        <div
-          className=" w-[100%] pl-[35px]"
-          style={
-            surfaceColorAcrive
-              ? { borderBottom: `3px solid ${borderColor.current}` }
-              : null
-          }
-        >
-          <span
-            onClick={handleSurfaceText}
-            className=" text-[9px] hover:font-bold  cursor-pointer"
-          >
-            SURFACE{" "}
-          </span>
-        </div>
-      </div>
+      <Planetsstructure
+        borderColor={borderColor}
+        handleOverviewText={handleOverviewText}
+        handleSurfaceText={handleSurfaceText}
+        handleStructureText={handleStructureText}
+        overviewColorActive={overviewColorActive}
+        structureColorActive={structureColorActive}
+        surfaceColorAcrive={surfaceColorAcrive}
+      />
 
       <div className=" flex relative">
         <img
