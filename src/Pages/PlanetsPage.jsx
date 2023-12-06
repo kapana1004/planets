@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import shapeIcon from "/assets/icon-source.svg";
 import Planetdatafooter from "../components/Planetdatafooter";
 import Planetsstructure from "../components/Planetsstructure";
+import Planetcontent from "../components/Planetcontent";
 
 export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   const location = useLocation();
@@ -24,6 +25,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   const [overviewColorActive, setOverviewColorActive] = useState(true);
   const [structureColorActive, setStructureColorActive] = useState(false);
   const [surfaceColorAcrive, setSurfaceColorActive] = useState(false);
+
   let borderColor = useRef("");
 
   useEffect(() => {
@@ -81,32 +83,22 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
         surfaceColorAcrive={surfaceColorAcrive}
       />
 
-      <div className=" flex relative">
-        <img
-          className=" w-[111px] h-[111px] mt-[100px] mb-[100px] "
-          src={planetImage}
-          alt="planet"
-        />
-
-        {surfaceImageActive ? (
-          <img
-            className="w-[65px] h-[65px] absolute top-[60%] left-[22%]"
-            src={surfaceImage}
-            alt="geology"
-          />
-        ) : null}
-      </div>
-      <h1 className=" text-white text-[40px] ">{planet.name.toUpperCase()}</h1>
-      <p className=" w-[327px] text-[11px] leading-[22px] pb-[30px]">
-        {currentText}
-      </p>
-      <div className=" flex flex-row mb-[28px] items-center">
-        <span className=" pr-[5px] text-[#838391]">Source:</span>
-        <a className=" text-[#838391] pr-[5px]" href={currentSource}>
-          Wikkipedia
-        </a>
-        <img className=" w-[12px] h-[12px]" src={shapeIcon} alt="shape" />
-      </div>
+      <Planetcontent
+        planetImage={planetImage}
+        surfaceImageActive={surfaceImageActive}
+        surfaceImage={surfaceImage}
+        currentText={currentText}
+        currentSource={currentSource}
+        shapeIcon={shapeIcon}
+        planet={planet}
+        overviewColorActive={overviewColorActive}
+        structureColorActive={structureColorActive}
+        surfaceColorAcrive={surfaceColorAcrive}
+        borderColor={borderColor}
+        handleOverviewText={handleOverviewText}
+        handleStructureText={handleStructureText}
+        handleSurfaceText={handleSurfaceText}
+      />
 
       {!activMenu ? (
         <Planetdatafooter
@@ -116,6 +108,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
           revolution={revolution}
           radius={radius}
           temperature={temperature}
+          planet={planet}
         />
       ) : null}
     </div>

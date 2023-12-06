@@ -10,7 +10,7 @@ export default function Planetsstructure({
   handleSurfaceText,
 }) {
   return (
-    <div className=" w-[100%] pt-[15px]  flex flex-row justify-around border-b-[0.4px]">
+    <div className=" w-[100%] pt-[15px]  flex flex-row justify-around border-b-[0.4px] md:hidden ">
       <div
         className={` w-[100%] pl-[35px] pb-[20px]`}
         style={
