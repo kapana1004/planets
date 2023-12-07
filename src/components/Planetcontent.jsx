@@ -21,7 +21,7 @@ export default function Planetcontent({
     <>
       <div className=" flex relative">
         <img
-          className=" w-[111px] h-[111px] mt-[100px] mb-[100px] "
+          className=" w-[111px] h-[111px] mt-[80px] mb-[80px] "
           src={planetImage}
           alt="planet"
         />

@@ -13,7 +13,7 @@ function App() {
     setActivMenu(!activMenu);
   };
   return (
-    <div className=" h-[950px]">
+    <div className=" min-h-[100vh] ">
       <Header
         openCloseMenu={openCloseMenu}
         activMenu={activMenu}
