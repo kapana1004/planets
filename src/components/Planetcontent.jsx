@@ -18,7 +18,7 @@ export default function Planetcontent({
   handleSurfaceText,
 }) {
   return (
-    <div className=" lg:flex lg:flex-row lg:justify-evenly lg:min-w-[100vw] lg:pl-[40px] lg:max-w-[680px] ">
+    <div className=" md:max-h-[600px] lg:flex lg:flex-row lg:justify-evenly lg:min-w-[100vw] lg:pl-[40px] lg:max-h-[650px] ">
       <div className=" flex justify-center relative pt-[30px] pb-[30px] lg:items-center lg:pl-[100px]">
         <img
           className=" max-w-[180px] md:max-w-[300px] lg:max-w-[370px] "
@@ -39,7 +39,7 @@ export default function Planetcontent({
           <h1 className=" text-white text-[40px] md:pb-[20px] ">
             {planet.name.toUpperCase()}
           </h1>
-          <p className=" w-[327px] text-[11px] leading-[22px] pb-[30px] md:w-[339px]">
+          <p className=" w-[327px] text-[11px] leading-[22px] pb-[20px] md:w-[339px]">
             {currentText}
           </p>
           <div className=" flex flex-row mb-[28px] items-center">
