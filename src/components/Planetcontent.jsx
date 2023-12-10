@@ -18,7 +18,7 @@ export default function Planetcontent({
   handleSurfaceText,
 }) {
   return (
-    <div className=" lg:flex lg:flex-row lg:justify-evenly lg:min-w-[100vw] lg:pl-[40px] ">
+    <div className=" lg:flex lg:flex-row lg:justify-evenly lg:min-w-[100vw] lg:pl-[40px] lg:max-w-[680px] ">
       <div className=" flex justify-center relative pt-[30px] pb-[30px] lg:items-center lg:pl-[100px]">
         <img
           className=" max-w-[180px] md:max-w-[300px] lg:max-w-[370px] "
