@@ -13,12 +13,13 @@ function App() {
     setActivMenu(!activMenu);
   };
   return (
-    <div className=" min-h-[100vh] ">
-      <Header
+    <div className=" min-h-[100vh] min-w-[100vw]">
+      {/* <Header
         openCloseMenu={openCloseMenu}
         activMenu={activMenu}
         setActivMenu={setActivMenu}
-      />
+        planetsData={planetsData}
+      /> */}
 
       <div>
         {activMenu ? (
@@ -39,6 +40,7 @@ function App() {
                   planetsData={planetsData}
                   activMenu={activMenu}
                   setActivMenu={setActivMenu}
+                  openCloseMenu={openCloseMenu}
                 />
               }
             />

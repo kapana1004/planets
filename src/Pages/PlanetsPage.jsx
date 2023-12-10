@@ -4,8 +4,14 @@ import shapeIcon from "/assets/icon-source.svg";
 import Planetdatafooter from "../components/Planetdatafooter";
 import Planetsstructure from "../components/Planetsstructure";
 import Planetcontent from "../components/Planetcontent";
+import Header from "../components/Header";
 
-export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
+export default function PlanetsPage({
+  planetsData,
+  activMenu,
+  setActivMenu,
+  openCloseMenu,
+}) {
   const location = useLocation();
 
   const { nameId } = useParams();
@@ -13,6 +19,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   const planet = planetsData.find(
     (planet) => planet.name.toLowerCase() === nameId
   );
+
   const [currentText, setCurrentText] = useState(planet.overview.content);
   const [currentSource, setCurrentSource] = useState(planet.overview.content);
   const [planetImage, setPlanetImage] = useState(planet.images.planet);
@@ -41,6 +48,7 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
     setRevolution(planet.revolution);
     setRadius(planet.radius);
     setTemperature(planet.temperature);
+    setSurfaceImage(planet.images.geology);
   }, [location.pathname]);
 
   const handleStructureText = () => {
@@ -72,7 +80,15 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
   };
 
   return (
-    <div className=" flex flex-col justify-center items-center">
+    <div className=" flex flex-col justify-center items-center min-w-[100vw]">
+      <Header
+        openCloseMenu={openCloseMenu}
+        activMenu={activMenu}
+        setActivMenu={setActivMenu}
+        planetsData={planetsData}
+        borderColor={borderColor}
+        overviewColorActive={overviewColorActive}
+      />
       <Planetsstructure
         borderColor={borderColor}
         handleOverviewText={handleOverviewText}
@@ -99,7 +115,6 @@ export default function PlanetsPage({ planetsData, activMenu, setActivMenu }) {
         handleStructureText={handleStructureText}
         handleSurfaceText={handleSurfaceText}
       />
-
       {!activMenu ? (
         <Planetdatafooter
           activMenu={activMenu}

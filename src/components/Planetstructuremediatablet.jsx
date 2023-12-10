@@ -10,7 +10,7 @@ export default function Planetstructuremediatablet({
   handleSurfaceText,
 }) {
   return (
-    <div className=" hidden  md:flex md:flex-col  md:w-[281px] md:gap-[16px] md:pt-[50px] md:ml-[70px] ">
+    <div className=" hidden  md:flex md:flex-col  md:w-[281px] md:gap-[16px] md:pt-[50px] md:ml-[70px] lg:ml-[0] lg:w-[350px]">
       <div
         onClick={handleOverviewText}
         className={` w-[100%] h-[40px] border-[0.4px]  flex items-center cursor-pointer`}

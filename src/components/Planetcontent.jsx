@@ -18,24 +18,24 @@ export default function Planetcontent({
   handleSurfaceText,
 }) {
   return (
-    <>
-      <div className=" flex relative">
+    <div className=" lg:flex lg:flex-row lg:justify-evenly lg:min-w-[100vw] lg:pl-[40px] ">
+      <div className=" flex justify-center relative pt-[30px] pb-[30px] lg:items-center lg:pl-[100px]">
         <img
-          className=" w-[111px] h-[111px] mt-[80px] mb-[80px] "
+          className=" max-w-[180px] md:max-w-[300px] lg:max-w-[370px] "
           src={planetImage}
           alt="planet"
         />
 
         {surfaceImageActive ? (
           <img
-            className="w-[65px] h-[65px] absolute top-[60%] left-[22%]"
+            className="w-[65px] h-[65px] absolute top-[75%] left-[40%] md:max-w-[129px] md:left-[45%] lg:left-[54%] lg:top-[65%] lg:h-[80px]"
             src={surfaceImage}
             alt="geology"
           />
         ) : null}
       </div>
-      <div className=" flex  justify-center md:flex-row w-[100%]  md:ml-[28px] ">
-        <div>
+      <div className=" flex  justify-center md:flex-row w-[100%]  md:ml-[10px] lg:flex-col lg:w-[350px] lg:pt-[126px]">
+        <div className=" flex flex-col items-center">
           <h1 className=" text-white text-[40px] md:pb-[20px] ">
             {planet.name.toUpperCase()}
           </h1>
@@ -51,7 +51,7 @@ export default function Planetcontent({
           </div>
         </div>
 
-        <div className=" flex flex-col ">
+        <div className=" flex flex-col lg:pb-[86px]">
           <Planetstructuremediatablet
             overviewColorActive={overviewColorActive}
             structureColorActive={structureColorActive}
@@ -63,6 +63,6 @@ export default function Planetcontent({
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }

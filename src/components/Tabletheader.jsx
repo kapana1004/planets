@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Tabletheader({}) {
   return (
-    <div className=" hidden md:flex md:flex-row md:gap-[33px] md:pb-[27px] md:border-b-[0.1px] md:justify-center md:w-[100%]">
+    <div className=" hidden md:flex md:flex-row md:gap-[33px] md:pb-[27px] md:border-b-[0.1px] md:justify-center md:w-[100%] lg:hidden">
       <Link to="/mercury">
         <span className=" text-[11px] text-white font-bold">MERCURY</span>
       </Link>
